@@ -1,0 +1,42 @@
+These additional tests cover different scenarios, including large and small square footages and different numbers of bedrooms.
+I can continue to create more tests to thoroughly evaluate the performance of your regression model in various situations.
+
+
+
+# tests/test_regression_model.py
+
+from your_regression_model import HousePricePredictor
+
+def test_predict_house_price():
+    # Test the predict method of the regression model
+    model = HousePricePredictor()  # Initialize your regression model
+    input_data = [2000, 3]  # Square footage and number of bedrooms
+    expected_price = 250000  # An expected house price
+    predicted_price = model.predict(input_data)
+    assert predicted_price == expected_price, f"Expected price: {expected_price}, Predicted price: {predicted_price}"
+
+def test_another_scenario():
+    # Test another scenario
+    model = HousePricePredictor()
+    input_data = [1800, 2]
+    expected_price = 220000
+    predicted_price = model.predict(input_data)
+    assert predicted_price == expected_price, f"Expected price: {expected_price}, Predicted price: {predicted_price}"
+
+def test_high_square_footage():
+    # Test a scenario with a large square footage
+    model = HousePricePredictor()
+    input_data = [5000, 4]
+    expected_price = 400000
+    predicted_price = model.predict(input_data)
+    assert predicted_price == expected_price, f"Expected price: {expected_price}, Predicted price: {predicted_price}"
+
+def test_low_square_footage():
+    # Test a scenario with a small square footage
+    model = HousePricePredictor()
+    input_data = [1000, 2]
+    expected_price = 150000
+    predicted_price = model.predict(input_data)
+    assert predicted_price == expected_price, f"Expected price: {expected_price}, Predicted price: {predicted_price}"
+
+# Add more tests for different scenarios and edge cases
